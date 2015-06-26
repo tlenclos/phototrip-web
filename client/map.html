@@ -1,0 +1,13 @@
+<head>
+  <title>map-demo</title>
+</head>
+
+<body>
+{{> map }}
+</body>
+
+<template name="map">
+    <div class="map">
+      {{> googleMap name="globalMap" options=gmapOptions}}
+    </div>
+</template>
