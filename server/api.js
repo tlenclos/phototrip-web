@@ -1,8 +1,8 @@
-Restivus.configure({
+var Api = new Restivus({
     prettyJson: true
 });
 
-Restivus.addRoute('locations', {authRequired: false}, {
+Api.addRoute('locations', {authRequired: false}, {
     get: function() {
         return Locations.find().fetch();
     },
@@ -11,10 +11,11 @@ Restivus.addRoute('locations', {authRequired: false}, {
         var data = this.bodyParams;
 
         if (data.lat && data.lng) {
-            Locations.insert({lat: data.lat, lng: data.lng});
+            var locationId = Locations.insert({lat: data.lat, lng: data.lng, note: data.note});
+
             return {
                 statusCode: 201,
-                body: {status: 201, message: 'Location created'}
+                body: Locations.findOne(locationId)
             };
         } else {
             return {

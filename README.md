@@ -1,4 +1,30 @@
-meteor-google-maps-demo
-==================
+# Phototrip web app
 
-A basic demo app for https://github.com/dburles/meteor-google-maps
+Build with Meteor, React and Mapbox.
+
+## Entities
+
+### Location
+- Text
+- Latitude
+- Longitude
+- Media[]
+- Associated Trip
+
+### Media
+- Type
+- Data
+- Location (exif)
+- Associated Trip
+
+### Trip
+- Description
+- Start
+- End
+- Associated User
+
+## API
+
+## TODO
+
+- [ ] Basic app with Meteor, react, ES7
